@@ -1,0 +1,99 @@
+
+<div class="container"> <!-- max-width: 1280px, margin: 0 auto-->
+  <!-- <div class="row bg-danger"> -->
+    <!-- <div class="col-6 bg-default">1</div> -->
+    <!-- <div class="col-6 bg-warning">2</div> -->
+  <!-- </div> -->
+  <div class="container bg-default">
+    <!-- <div class="row bg-danger"> -->
+      <!-- <div class="col-12"> -->
+
+        <!-- mb - bottom, my - top-bottom -->
+        <div class="card mt-2 mb-5"><!--rem=16px -> 0:none, 1: 0.25rem, 2: 0.5rem, 3: 1rem, 4: 1.5rem, 5: 3rem-->
+          <div class="card-header">
+            <h1 class="mb-0">Choses à faire</h1>
+            <div class="card-header">
+              Choses à faire
+              <app-tabs [tabIndex]="0"></app-tabs>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <li *ngFor="let todo of todos" [class.done]="todo.done">
+                <input type="checkbox"          
+                (change)="onCheckboxToggle(todo, $event.target.checked)"
+                
+                >
+                <!-- [class]="cssClasses(todo)" -->
+                <!-- [checked]="todo.done"é -->
+                  <span class="ml-2">{{todo.index}}</span>
+                  <span>{{todo.description}}</span>
+                  <span>{{todo.done}}</span>
+              </li>
+            </ul>
+            <!-- <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+        <!-- </div> -->
+      <!-- </div> -->
+    </div>
+
+    <input 
+      #todoInput
+      type="text" 
+      [value]="todoText"
+      (input)="handleInputChange($event)"
+      > 
+      <!-- (change)="handleInputChange($event)" -->
+      <!-- (click)="doSomething($event.target.value)" -->
+      <!-- (click)="doSomething($event)" -->
+    <!-- [] -> class -> html-->
+    <!-- <button (click)="doSomething($event)">Click me!</button> -->
+    <!-- behind angular: button.addEventListener("click", function(e) { $event = e; implicit variable}) e - event-->
+
+    <div class="card-body">
+      <div class="input-group">
+        <label for=""></label>
+        <input type="text"
+          class="form-control"
+          #todoField
+          [value]="todoText">
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="addItem(todoInput.value)">
+              Ajouter
+            </button>
+          </div>
+      </div>
+    </div>
+    
+    <!-- <button (click)="addItem($event)">Ajouter</button> -->
+    <br>
+    {{todoText}}
+    {{todos | json}} <!-- JSON.stingify-->
+  </div>
+
+  <!-- <div> -->
+    <!-- <input type="text" [value]="fn" (input)="updateFirstName($event.target.value)"> -->
+
+    <!-- div.appendcChild/removeChild(<div>)-->
+    <!-- falsey: false, 0, '', null, undefined, NaN -->
+    <!-- <div *ngIf="fn.length > 0">  -->
+    <!-- <div *ngIf="fn.length">  if length = 0, false-->
+    <!-- <div *ngIf="fn"> if fn null, false -->
+    <!-- <div *ngIf="fn.trim(); else elseMsgTpl">
+      Bonjour, {{fn}}
+    </div> -->
+    <!-- <div #elseMsgTpl> -->
+      <!-- Veullez donner votre nom -->
+    <!-- </div> -->
+    
+    <!-- same result <div *ngIf="fn.trim()">, so simple approach is to use *ngIf-->
+    <!-- new NgTemplateComponent.ngif = fn.trim()-->
+    <!-- <ng-template [ngIf]="fn.trim()"> 
+      <div >
+        Bonjour, {{fn}}
+      </div>
+    </ng-template>
+  </div> -->
+</div>

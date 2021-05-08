@@ -1,0 +1,26 @@
+<p>todo-editor-page works!</p>
+<div class="container mt-5">
+  <div class="row">
+    <div *ngIf="error" class="text-danger">
+      {{error}}
+    </div>
+    <div class="col-12">
+      <h1>Modifier une tâche</h1>
+      <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
+      <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="form-group">
+        <label for="description">Description</label>
+        <input formControlName="description" type="text" id="description" class="form-control">
+        </div>
+        <div class="form-check">
+        <input formControlName="done" type="checkbox" id="done" class="form-check-input">
+        <label class="form-check-label" for="done">
+        Complétée?
+        </label>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Sauvegarder">
+        <a [routerLink]="['/todos']" class="btn btn-secondary" >Annuler</a>
+      </form>
+    </div>
+  </div>
+</div>

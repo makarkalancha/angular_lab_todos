@@ -1,0 +1,15 @@
+<div class="btn-group" role="group">
+  <button type="button"
+    class="btn btn-default"
+    [class.btn-primary]="tabIndex == 0"
+    [class.btn-outline-primary]="tabIndex != 0"
+    (click)="selectTab(0)"
+  >Actives</button>
+  <button type="button"
+    class="btn btn-default"
+    [class.btn-primary]="tabIndex == 1"
+    [class.btn-outline-primary]="tabIndex != 1"
+    (click)="selectTab(1)"
+  >Complétées</button>
+</div>
+tab.component.tabIndex: {{tabIndex}}
