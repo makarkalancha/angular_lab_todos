@@ -1,0 +1,79 @@
+--var
+1)
+if(true){
+	var y = 123;
+}
+console.log(y); //123
+
+2)
+if(false){
+	var y = 123;
+}
+console.log(y); //undefined
+
+3)
+function dosomething(){}
+	if(false){
+		var y = 123;
+	}
+	console.log(y); //123
+} 
+dosomething():
+
+4)
+for(var z = 0; z<10;++Z){
+}
+console.log(z)//10
+--let
+1)
+function dosomething(){}
+	if(false){
+		let y = 123;
+	}
+	console.log(y);
+} 
+dosomething();
+--exception
+
+2)
+function dosomething(){}
+	if(false){
+		let y = 123;
+	}
+} 
+dosomething();
+
+3)
+for(let z = 0; z<10;++Z){
+}
+console.log(z)//no compile
+
+
+--const
+
+1)
+---readonly
+const persion {
+	fn:'bob'
+}
+
+person.fn = "Roger"//yes
+
+2)
+conts toto =123
+toto = 2 //no
+
+3)---readonly
+const persion  Object.freeze({
+	fn:'bob'
+})
+
+person.fn = "Roger"//no
+4)---readonly
+const persion: Readonly<{fn :string}> = {fn: "Bob"};
+person.fn = "Roger"//no
+
+-other readonly interfaces
+Record
+Pick
+Except

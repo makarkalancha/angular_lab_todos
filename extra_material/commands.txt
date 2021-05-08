@@ -1,0 +1,86 @@
+https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows
+
+ git config --global http.sslVerify false
+ 
+ --turn on!!!
+  git config --global http.sslVerify true
+  
+--https://stackoverflow.com/questions/45884752/npm-err-code-unable-to-get-issuer-cert-locally
+npm ERR! code UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+npm ERR! errno UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+npm ERR! request to https://registry.npmjs.org/@angular%2fcli failed, reason: unable to get local issuer certificate
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\DRO8172\AppData\Roaming\npm-cache\_logs\2021-04-27T13_37_08_465Z-debug.log
+--run this
+npm config set registry http://registry.npmjs.org/
+npm config set registry http://registry.npmjs.org/  
+
+
+--ng --version
+https://stackoverflow.com/questions/46623571/angular-ng-command-not-found/46623602
+
+-tool-versions
+tool that sets in project a needed version of node
+
+=-opens current folder in visual studio
+code .
+
+--compile project
+ng serve
+
+--vs code
+ctrl+p - open file fuzzy search
+ctrl+b - close project tree
+
+--create interface
+ng generate interface todos/todo
+ng g i todos/todo
+
+--vscode emmet: fills automatically tags in html
+https://docs.emmet.io/cheat-sheet/
+ul.list-unstyled>li*5>input[type=chekcbox]+span
+result:
+<ul class="list-unstyled">
+  <li><input type="chekcbox"><span></span></li>
+  <li><input type="chekcbox"><span></span></li>
+  <li><input type="chekcbox"><span></span></li>
+  <li><input type="chekcbox"><span></span></li>
+  <li><input type="chekcbox"><span></span></li>
+</ul>
+
+
+css
+div span --child 
+
+<div>
+	<p>
+		<span>
+
+
+div > span --direct child 
+<div>
+	<span>
+	
+	
+-- install bootstrap
+npm install bootstrap
+
+--vscode
+ctrl+click: multiple cursor to change
+id: 1, description: Acheter du lait, done: false
+to this
+"id": 1, "description": "Acheter du lait", "done": false
+
+
+--run server instead of this command
+./node_modules/.bin/json-server --watch "db.json"
+--we can use:
+npx json-server --watch db.json
+
+
+--to set default "base href"
+ng build --prod
+--ahead of time
+ng build --prod --aot
+--in folder "dist" files that we can deploy to our server

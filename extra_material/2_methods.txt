@@ -1,0 +1,27 @@
+function greets (name : string)): string{
+	return "Bonjour "+name;
+}
+const greeting = greets("bob");
+console.log(greeting)
+
+
+import order extensions
+ts
+js
+json
+
+--to import we need to add "export"
+
+--file1
+import { greets } from '.greetings';
+
+const greetings = greets("Bob");
+console.log(greetings);
+//but x =123 from file2 we cannot use, we need to add word "export"
+
+--file2
+export function greets(name: string): string{
+	return "Bonjour "+name;
+}
+
+const x = 123;
